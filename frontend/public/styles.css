@@ -1,14 +1,61 @@
+/* 
+--------------------------------------------------------------------------------------------
+    General
+--------------------------------------------------------------------------------------------
+*/
 
-.body{
-    height: 100vh;
-    width: 100%;
-    border: 2px solid black;
+.section-heading {
+    text-align: center;
 }
 
-.heading-area{
+.section-heading p {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+/* 
+.body {
+    height: 100vh;
+    width: 100%;
+}
+
+.heading-area {
     position: relative;
     height: 100px;
     width: 500px;
-    color: black ;
+    color: black;
     border: 2px dotted black;
+}
+ */
+
+
+/* 
+--------------------------------------------------------------------------------------------
+    Home
+--------------------------------------------------------------------------------------------
+*/
+
+.home .wrapper {
+    height: 100vh;
+}
+
+.home .wrapper .element-box {
+    width: 10%;
+}
+
+.home .wrapper .canvas-box {
+    width: 90%;
+}
+
+
+/* 
+--------------------------------------------------------------------------------------------
+    Sidebar
+--------------------------------------------------------------------------------------------
+*/
+
+.sidebar {
+    background-color: rgb(171, 226, 43);
 }

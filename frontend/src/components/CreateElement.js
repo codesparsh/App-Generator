@@ -1,28 +1,10 @@
 import React,{useEffect, useState} from 'react'
 
-function CreateElement() {
+function CreateElement(drag_start,canvasRefs) {
     const [textElement,setTextElement] = useState([]);
     const [elementId,setElementId] = useState(0);
 
-    const drag_start = (e)=>{
-        e.dataTransfer.setData("text", e.target.id);
-    }
-
-    const drop = (e)=>{
-        var data = e.dataTransfer.getData("text");
-        var ele = document.getElementById(data);
-        ele.style.left = e.clientX + 'px';
-        ele.style.top = e.clientY + 'px';
-        e.stopPropagation();
-        e.preventDefault();
-        return false
-    }
-
-    const drag_over = (e)=>{
-        e.preventDefault();
-        return false;
-    }
-
+   
     const element = (id)=>{
         var parah = document.createElement('div');
         parah.id = id;
@@ -41,7 +23,7 @@ function CreateElement() {
             e.target.draggable = true;
         }) 
         parah.addEventListener('mouseover',(e)=>{
-            e.target.style.outline = '2px solid -webkit-focus-ring-color';
+            e.target.style.outline = '2px solid blue';
         })
 
         parah.addEventListener('mouseleave',(e)=>{
@@ -51,6 +33,7 @@ function CreateElement() {
     }
 
     const create = (e)=>{
+        console.log(canvasRefs.current);
         var parent = e.target.parentNode;
         var newId = 'drag'+elementId; 
         console.log(typeof(newId));
@@ -62,9 +45,12 @@ function CreateElement() {
 
     
     return (
-        <div className="body" onDragOver={(e)=>{drag_over(e)}} onDrop={(e)=>drop(e)}>
+        <div className="text-center">
             <button onClick={(e)=>create(e)}>Create Element</button>
+
         </div>
+        // <div onDragOver={(e)=>{drag_over(e)}} onDrop={(e)=>drop(e)}>
+        // </div>
     )
 }
 
